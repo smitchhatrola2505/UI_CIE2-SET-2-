@@ -1,0 +1,17 @@
+<div class="container-fluid mt-3">
+    <table class="table table-bordered table-primary table-warning table-hover">
+        <thead>
+            <th>Name</th>
+            <th>Quantity</th>
+        </thead>
+        <!-- R-2 -->
+        <tbody>
+            <tr *ngFor="let m of stocks | paginate : {itemsPerPage:3,currentPage:p}">
+                <td>{{m.name}}</td>
+                <td>{{m.qty}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- R-3 -->
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>

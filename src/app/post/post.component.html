@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <th>UserId</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Id</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of data | paginate : {itemsPerPage:6,currentPage:p}">
+            <td>{{m.userId}}</td>
+            <td>{{m.title}}</td>
+            <td>{{m.body}}</td>
+            <td>{{m.id}}</td>
+            <td>
+                <button mat-raised-button color="warn" (click)="delete(m)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
